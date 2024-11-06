@@ -80,4 +80,5 @@ print(in_adwentures_of_tom_sawer)
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
 """
 last_adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer_sentences[-1]
-print(f"Кількість слів в останньому речені: {len(last_adwentures_of_tom_sawer_sentences)}")
+new_split_last_adwentures_of_tom_sawer_sentences = last_adwentures_of_tom_sawer_sentences.split()
+print(f"Кількість слів в останньому речені: {len(new_split_last_adwentures_of_tom_sawer_sentences)}")

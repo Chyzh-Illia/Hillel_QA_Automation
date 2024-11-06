@@ -67,7 +67,7 @@ print(adwentures_of_tom_sawer_sentences)
 """ Виведіть четверте речення з adwentures_of_tom_sawer_sentences.
 Перетворіть рядок у нижній регістр.
 """
-lower_adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer_sentences[2].lower()
+lower_adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer_sentences[3].lower()
 print(lower_adwentures_of_tom_sawer_sentences)
 
 # task 09
@@ -79,5 +79,5 @@ print(in_adwentures_of_tom_sawer)
 # task 10
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
 """
-len_adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer_sentences[7] # пілся перевірки списку через len показує 8, це кількість елементів в списку, це говорить про те, що останнє по індексу буде 7
-print(len(len_adwentures_of_tom_sawer_sentences))
+last_adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer_sentences[-1]
+print(f"Кількість слів в останньому речені: {len(last_adwentures_of_tom_sawer_sentences)}")

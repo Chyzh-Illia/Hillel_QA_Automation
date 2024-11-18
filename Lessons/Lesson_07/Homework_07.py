@@ -3,9 +3,6 @@
 лише до максимального значення для добутку - 25.
 Код майже готовий, треба знайти помилки та випраавити\доповнити.
 """
-from os.path import split
-
-
 def multiplication_table(number: int | float):
     # Initialize the appropriate variable
     multiplier = 1
@@ -21,7 +18,7 @@ def multiplication_table(number: int | float):
 
         # Increment the appropriate variable
         multiplier += 1
-
+    return "Loop End"
 print(multiplication_table(3))
 # Should print:
 # 3x1=3
@@ -113,3 +110,4 @@ def verify_on_word():
     return "Hello" in input_data
 
 print(verify_on_word())
+

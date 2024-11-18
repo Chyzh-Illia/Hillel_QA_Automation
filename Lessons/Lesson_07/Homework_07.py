@@ -8,17 +8,15 @@ def multiplication_table(number: int | float):
     multiplier = 1
 
     # Complete the while loop condition.
-    while multiplier <= 5:
+    while multiplier <= 100:
         result = number * multiplier
         # десь тут помила, а може не одна
         if  result > 25:
             # Enter the action to take if the result is greater than 25
             return f"Введене число більше ніж 25, ваше число: {result}"
         print(str(number) + "x" + str(multiplier) + "=" + str(result))
-
         # Increment the appropriate variable
         multiplier += 1
-    return "Loop End"
 print(multiplication_table(3))
 # Should print:
 # 3x1=3
@@ -32,7 +30,7 @@ print(multiplication_table(3))
 """  Написати функцію, яка обчислює суму двох чисел.
 """
 sum_lambda = lambda x, y: x + y
-print(sum_lambda(2, 5))
+print(f"Сума двох чисел: {sum_lambda(2, 5)}")
 
 # task 3
 """  Написати функцію, яка розрахує середнє арифметичне списку чисел.
@@ -40,7 +38,7 @@ print(sum_lambda(2, 5))
 def arithmetic_mean(*numbers: int | float):
     return sum(numbers) / len(numbers)
 
-print(arithmetic_mean(10, 23, 32, 232, 23, 2323, 2323))
+print(f"Розрахунок середнє арифметичного: {arithmetic_mean(10, 23, 32, 232, 23, 2323, 2323)}")
 
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.

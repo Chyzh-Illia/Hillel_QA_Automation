@@ -40,7 +40,7 @@ print(sum_lambda(2, 5))
 def arithmetic_mean(*numbers: int | float):
     return sum(numbers) / len(numbers)
 
-print(arithmetic_mean(10, 23, 32))
+print(arithmetic_mean(10, 23, 32, 232, 23, 2323, 2323))
 
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
@@ -53,7 +53,14 @@ print(str_result)
 # task 5
 """  Написати функцію, яка приймає список слів та повертає найдовше слово у списку.
 """
+def find_longest_word(words: list[str]):
+    if not words:
+        return "Список порожній"
+    longest_word = max(words, key=len)
+    return longest_word
 
+words_list = ["Joe", "Snow", "Andre", "John", "Leonardo"]
+print(find_longest_word(words_list)) # will be Leonardo
 # task 6
 """  Написати функцію, яка приймає два рядки та повертає індекс першого входження другого рядка
 у перший рядок, якщо другий рядок є підрядком першого рядка, та -1, якщо другий рядок
@@ -104,10 +111,10 @@ print(calculate(5, 0, "**"))
 Обоязково документуйте функції та дайте зрозумілі імена змінним.
 """
 """Перевірка, чи є слово у реченні, очікуємо True or False"""
-input_data = input("Enter your words, need that will 'Hello' and other text: ")
+#input_data = input("Enter your words, need that will 'Hello' and other text: ")
 
-def verify_on_word():
-    return "Hello" in input_data
+#def verify_on_word():
+   # return "Hello" in input_data
 
-print(verify_on_word())
+# print(verify_on_word())
 

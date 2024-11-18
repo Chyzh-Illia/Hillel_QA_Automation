@@ -111,10 +111,10 @@ print(calculate(5, 0, "**"))
 Обоязково документуйте функції та дайте зрозумілі імена змінним.
 """
 """Перевірка, чи є слово у реченні, очікуємо True or False"""
-#input_data = input("Enter your words, need that will 'Hello' and other text: ")
+input_data = input("Enter your words, need that will 'Hello' and other text: ")
 
-#def verify_on_word():
-   # return "Hello" in input_data
+def verify_on_word():
+    return "Hello" in input_data
 
-# print(verify_on_word())
+print(verify_on_word())
 

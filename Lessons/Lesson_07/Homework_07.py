@@ -84,8 +84,7 @@ print(split_str("Test data here"))
 # task 8
 """Сортування чисел і тексту"""
 any_input = "We can do it togather "
-sort_lambda = sorted(any_input, key=lambda x: x)
-print(sort_lambda)
+print(sorted(any_input, key=lambda x: x))
 # task 9
 """Калькуляція +, -, *, /, в корінь"""
 def calculate(number1: int | float, number2: int | float, operation="+"):
@@ -109,9 +108,10 @@ print(calculate(5, 0, "**"))
 Обоязково документуйте функції та дайте зрозумілі імена змінним.
 """
 """Перевірка, чи є слово у реченні, очікуємо True or False"""
-input_data = input("Enter your words, need that will 'Hello' and other text: ")
+
 
 def verify_on_word():
+    input_data = input("Enter your words, need that will 'Hello' and other text: ")
     return "Hello" in input_data
 
 print(verify_on_word())

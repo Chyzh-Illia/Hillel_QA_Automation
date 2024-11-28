@@ -111,7 +111,7 @@ print(calculate(5, 0, "**"))
 
 
 def verify_on_word():
-    input_data = input("Enter your words, need that will 'Hello' and other text: ")
+    input_data = "Enter your words, need that will 'Hello' and other text:"
     return "Hello" in input_data
 
 print(verify_on_word())

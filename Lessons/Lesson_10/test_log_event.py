@@ -5,7 +5,6 @@ from Lessons.Lesson_10 import homework_10
 
 @pytest.fixture(autouse=True)
 def clean_log_file():
-    """Удаляет лог-файл перед и после тестов."""
     log_file = 'login_system.log'
     if os.path.exists(log_file):
         os.remove(log_file)

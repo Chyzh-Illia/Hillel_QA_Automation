@@ -3,13 +3,12 @@ from datetime import datetime
 
 
 def parse_log_file(log_file, key):
-    """Парсит лог-файл и анализирует задержку heartbeat"""
     filtered_entries = []
     try:
         with open(log_file, 'r', encoding='utf-8') as file:
             for line in file:
                 if key in line:
-                    print(f"Найдена строка: {line.strip()}")  # Отладочный вывод
+                    print(f"String found: {line.strip()}")
                     timestamp_pos = line.find("Timestamp ")
                     if timestamp_pos != -1:
                         time_str = line[timestamp_pos + 10: timestamp_pos + 18]
@@ -17,19 +16,18 @@ def parse_log_file(log_file, key):
                             timestamp = datetime.strptime(time_str, "%H:%M:%S")
                             filtered_entries.append((timestamp, line.strip()))
                         except ValueError:
-                            print(f"Ошибка разбора времени в строке: {line.strip()}")
+                            print(f"Error parsing time in string: {line.strip()}")
                             continue
     except FileNotFoundError:
-        print(f"Ошибка: Файл {log_file} не найден.")
+        print(f"Error: File {log_file} not found.")
     except Exception as e:
-        print(f"Неожиданная ошибка: {e}")
+        print(f"Not expected error: {e}")
 
-    print(f"Всего найдено {len(filtered_entries)} строк с ключом '{key}'")  # Отладка
+    print(f"Find all items {len(filtered_entries)} stings with key '{key}'")
     return filtered_entries
 
 
 def analyze_heartbeat(log_entries, output_log):
-    """Анализирует интервалы heartbeat и логирует предупреждения и ошибки"""
     with open(output_log, 'w', encoding='utf-8') as out_file:
         for i in range(len(log_entries) - 1):
             t1, log1 = log_entries[i]
@@ -48,7 +46,7 @@ def test_heartbeat_analysis():
 
     log_entries = parse_log_file(log_file, key)
     if not log_entries:
-        pytest.skip("Файл лога пуст или ключ не найден")
+        pytest.skip("The log file is empty or the key was not found")
 
     analyze_heartbeat(log_entries, output_log)
 
@@ -56,4 +54,4 @@ def test_heartbeat_analysis():
         log_content = out_file.readlines()
 
     for line in log_content:
-        assert "WARNING" in line or "ERROR" in line, "Некорректный формат лога"
+        assert "WARNING" in line or "ERROR" in line, "Incorrect log format"

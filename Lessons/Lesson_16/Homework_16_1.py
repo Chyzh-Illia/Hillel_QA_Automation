@@ -6,21 +6,20 @@ class Employee:
 
 class Manager(Employee):
     def __init__(self, name, salary, department):
-        super().__init__(name, salary)
+        Employee.__init__(self, name, salary)  # Явный вызов конструктора Employee
         self.department = department
 
 
 class Developer(Employee):
     def __init__(self, name, salary, programming_language):
-        super().__init__(name, salary)
+        Employee.__init__(self, name, salary)  # Явный вызов конструктора Employee
         self.programming_language = programming_language
 
 
 class TeamLead(Manager, Developer):
     def __init__(self, name, salary, department, programming_language, team_size):
-        # Используем super() для MRO
-        super(TeamLead, self).__init__(name, salary, department)
-        self.programming_language = programming_language
+        Manager.__init__(self, name, salary, department)  # Явный вызов конструктора Manager
+        Developer.__init__(self, name, salary, programming_language)  # Явный вызов конструктора Developer
         self.team_size = team_size
 
 
@@ -32,5 +31,6 @@ def test_teamlead():
     assert hasattr(team_lead, "programming_language"), "Attribute 'programming_language' does not exist"
     assert hasattr(team_lead, "team_size"), "Attribute 'team_size' does not exist"
     print("Test passed, complete!")
+
 
 test_teamlead()
